@@ -1,2 +1,9 @@
-# TommyOstgaardWebsite
-Website for Tommy Østgaard, www.tommyostgaard.com
+# WebpackBin project
+
+## Start
+
+`npm install`
+
+`npm start`
+
+Go to `localhost:3000`
