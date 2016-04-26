@@ -1,14 +1,24 @@
 import React from 'react';
 import {Decorator as Cerebral} from 'cerebral-view-react';
+import styles from './App.css';
+import HomePage from 'components/HomePage';
 
-@Cerebral()
+const pages = {
+  'home': HomePage
+};
+
+@Cerebral({
+  page: ['currentPage'],
+})
 class App extends React.Component {
   render() {
-    return (
-      <div>
-        Hello world, I am Tommy Østgaard
-      </div>
-    );
+    const Page = pages[this.props.page];
+
+    if (this.props.isLoading) {
+      return <div className={styles.label}/>;
+    }
+
+    return <Page/>;
   }
 }
 
